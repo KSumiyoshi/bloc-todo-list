@@ -1,4 +1,15 @@
-<h1>Home Page</h1>
-{{ home.myHomeCtrlArray }}
+<h1>Current Todo List</h1>
+<div ng-repeat="task in home.data" ng-if="!task.completed">
+    <section class="adding-field">
+        <input ng-model="task.name" class="add-task" type="text"/>
+        <a href="" ng-click=" editing = !editing">Add</a>
+    </section>
+    <section class="already-added">
+        <input ng-model="task.completed" ng-show="!editing" type="checkbox"/>
+        <label class="added-list" ng-show="!editing">{{ data.task }}</label>
+        <a href="" ng-show="!editing" class="delete">Delete</a>
+    </section>
+</div>
+<!-- {{ home.myHomeCtrlArray }}
 
-{{ home.data }}
+{{ home.data }} -->

@@ -5,13 +5,16 @@
 
     // this.data = $firebaseArray(ref);
     this.data = [{
-      task: "Task #1"
+      name: "Task #1",
+      completed: true
     },
     {
-      task: "Task #2"
+      name: "Task #2",
+      completed: false
     },
     {
-      task: "Task #3"
+      name: "Task #3",
+      completed: false
     }]
     this.myHomeCtrlArray = [1, 2, 3, 4, 5];
   }

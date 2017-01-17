@@ -1,8 +1,54 @@
 body {
-    font-family: "Quicksand";
+    font-family: "Quicksand", sans-serif;
 }
 
 h1 {
     text-align: center;
+    background-color: lightgrey;
+    padding: 10px;
+    color: #fff;
+}
+
+.adding-field {
+    position: relative;
+    left: 50%;
+}
+
+.add-task {
+    position: relative;
+    left:
+    height: 40px;
+    width: 315px;
+    border-radius: 5px;
+    font-size: 25px;
+}
+
+.add-text {
+    text-decoration: none;
+    position: relative;
+    left: 25px;
+    font-size: 25px;
+    font-family: sans-serif;
+}
+
+.already-added {
+    position: relative;
+    top: 50px;
+}
+
+input[type="checkbox"]{
+  width: 20px; 
+  height: 20px; 
+}
+
+.added-list {
+    font-size:20px;
+}
+
+.delete-text {
+    text-decoration: none;
+    position: relative;
+    left: 374px;
+    font-size: 20px;
     font-family: sans-serif;
 }

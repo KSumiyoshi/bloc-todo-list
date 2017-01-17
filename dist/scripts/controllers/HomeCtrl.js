@@ -4,10 +4,11 @@
     var ref = firebase.database().ref().child("active");
 
     this.data = $firebaseArray(ref);
+    this.name = "Enter task name here";
     // this.data = [{
     //   name: "Task #1",
     //   createdAt: new Date(),
-    //   completed: true,
+    //   completed: false,
     //   expired: false
     // },
     // {
@@ -24,6 +25,14 @@
     //   expired: false
     // }]
     this.myHomeCtrlArray = [1, 2, 3, 4, 5];
+    this.addTask = function(name) {
+        this.data.$add({
+       name: name,
+       createdAt: new Date(),
+       completed: false,
+       expired: false
+     })    
+    }  
   }
 
   angular

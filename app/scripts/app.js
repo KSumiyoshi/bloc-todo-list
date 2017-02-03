@@ -14,6 +14,7 @@
         })
         .state('old', {
           url: '/template2',
+          controller: 'HomeCtrl as home',
           templateUrl: '/templates/old.html'
         });
   }

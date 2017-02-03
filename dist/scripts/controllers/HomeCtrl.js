@@ -5,34 +5,36 @@
 
     this.data = $firebaseArray(ref);
     this.name = "Enter task name here";
-    // this.data = [{
-    //   name: "Task #1",
-    //   createdAt: new Date(),
-    //   completed: false,
-    //   expired: false
-    // },
-    // {
-    //   name: "Task #2",
-    //   createdAt: new Date(),
-    //   completed: false,
-    //   expired: true
-    // },
-    // {
-    //   name: "Task #3",
-    //   completed: false
-    //   createdAt: new Date(),
-    //   completed: false,
-    //   expired: false
-    // }]
-    this.myHomeCtrlArray = [1, 2, 3, 4, 5];
+    var self = this;
+
+    this.data.$loaded().then(function(){
+      var currentTime = new Date();
+
+      self.data.forEach(function(todo){
+        console.log(todo.createdAt);
+        // 30 seconds in milliseconds: 30000
+        if( !todo.expired && (currentTime.getTime() - todo.createdAt >= 30000)){
+          todo.expired = true;
+          self.data.$save(todo);
+        }
+      })
+    });
+    
+    this.taskCompleted = function(task){
+      this.data.$save(task);
+    }
     this.addTask = function(name) {
-        this.data.$add({
+      this.data.$add({
        name: name,
-       createdAt: new Date(),
+       createdAt: firebase.database.ServerValue.TIMESTAMP,
        completed: false,
        expired: false
-     })    
-    }  
+     });
+    }
+
+    this.removeTask = function(task){
+      // https://www.firebase.com/docs/web/libraries/angular/api.html#angularfire-firebasearray-removerecordorindex
+    }
   }
 
   angular

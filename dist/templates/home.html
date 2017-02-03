@@ -1,21 +1,18 @@
-<div class="total-wrapper">    
+<div class="total-wrapper">
     <h2>Current Todo List</h2>
         <section class="adding-field">
             <input ng-model="home.name" class="add-task" type="text"/>
             <a ng-show="home.name.length > 0" href="" ng-click="editing = !editing; home.addTask(home.name)" class="add-text">add</a>
         </section>
-        <div ng-repeat="task in home.data" class="task-list">
+        <div ng-repeat="task in home.data" class="task-list" ng-hide="task.expired || task.completed">
             <section class="already-added">
-                <input ng-model="task.completed"  type="checkbox" class="one-line"/>
+                <input ng-model="task.completed"  type="checkbox" class="one-line" ng-change="home.taskCompleted(task)"/>
                 <label class="added-list one-line"> {{ task.name }}</label>
+                {{ task }}
                 <div class="delete">
                     <a href="" class="delete-text one-line">delete</a>
-                </div> 
+                </div>
                 <hr />
             </section>
         </div>
-</div>    
-
-
-
-
+</div>

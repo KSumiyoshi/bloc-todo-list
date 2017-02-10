@@ -20,9 +20,6 @@
       })
     });
     
-    this.taskCompleted = function(task){
-      this.data.$save(task);
-    }
     this.addTask = function(name) {
       this.data.$add({
        name: name,

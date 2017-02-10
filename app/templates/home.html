@@ -6,7 +6,7 @@
         </section>
         <div ng-repeat="task in home.data" class="task-list" ng-hide="task.expired || task.completed">
             <section class="already-added">
-                <input ng-model="task.completed"  type="checkbox" class="one-line" ng-change="home.taskCompleted(task)"/>
+                <completed-task task="task"></completed-task>
                 <label class="added-list one-line"> {{ task.name }}</label>
                 {{ task }}
                 <div class="delete">

@@ -33,8 +33,16 @@
     }
 
     this.removeTask = function(task){
-      // https://www.firebase.com/docs/web/libraries/angular/api.html#angularfire-firebasearray-removerecordorindex
+        this.data.$remove(task);
     }
+    /* this.removeTask = function(name) {
+        this.data.$remove({
+            name: name,
+            createdAt: firebase.database.ServerValue.TIMESTAMP,
+            completed: false,
+            expired: false
+        });
+    } */    
   }
 
   angular

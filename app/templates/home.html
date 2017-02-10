@@ -10,7 +10,7 @@
                 <label class="added-list one-line"> {{ task.name }}</label>
                 {{ task }}
                 <div class="delete">
-                    <a href="" class="delete-text one-line">delete</a>
+                    <a href="" class="delete-text one-line" ng-click="home.removeTask(task)">delete</a>
                 </div>
                 <hr />
             </section>
